@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Tours - Naturequest Safaris</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/admin.css" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar (same as dashboard.html) -->
+        
+        <div class="admin-content">
+            <!-- Top Navigation (same as dashboard.html) -->
+            
+            <!-- Tours Content -->
+            <div class="container-fluid p-4">
+                <!-- Page Header -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Manage Tours</h1>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newTourModal">
+                        <i class="fas fa-plus"></i> Add New Tour
+                    </button>
+                </div>
+
+                <!-- Tours Grid -->
+                <div class="row" id="toursGrid">
+                    <!-- Tour Cards - Populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New/Edit Tour Modal -->
+    <div class="modal fade" id="tourModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Tour</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="tourForm">
+                        <input type="hidden" name="tourId">
+                        
+                        <!-- Basic Information -->
+                        <div class="mb-4">
+                            <h6 class="form-section-title">Basic Information</h6>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label>Tour Name *</label>
+                                    <input type="text" class="form-control" name="name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label>Duration (Days) *</label>
+                                    <input type="number" class="form-control" name="duration" min="1" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label>Short Description *</label>
+                                <input type="text" class="form-control" name="shortDescription" required>
+                            </div>
+                            <div class="mb-3">
+                                <label>Detailed Description *</label>
+                                <textarea class="form-control rich-editor" name="description" rows="5" required></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Pricing -->
+                        <div class="mb-4">
+                            <h6 class="form-section-title">Pricing</h6>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label>Adult Price (USD) *</label>
+                                    <input type="number" class="form-control" name="adultPrice" min="0" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label>Child Price (USD)</label>
+                                    <input type="number" class="form-control" name="childPrice" min="0">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label>Group Discount (%)</label>
+                                <input type="number" class="form-control" name="groupDiscount" min="0" max="100">
+                            </div>
+                        </div>
+
+                        <!-- Details -->
+                        <div class="mb-4">
+                            <h6 class="form-section-title">Tour Details</h6>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label>Category *</label>
+                                    <select class="form-select" name="category" required>
+                                        <option value="">Select Category</option>
+                                        <option value="safari">Safari</option>
+                                        <option value="hiking">Hiking</option>
+                                        <option value="cultural">Cultural</option>
+                                        <option value="photography">Photography</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label>Difficulty Level</
