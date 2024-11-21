@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Manager - Naturequest Safaris</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" rel="stylesheet">
+    <link href="../css/admin.css" rel="stylesheet">
+    <link href="../css/admin-media.css" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar (same as dashboard.html) -->
+        
+        <div class="admin-content">
+            <!-- Top Navigation (same as dashboard.html) -->
+            
+            <!-- Media Manager Content -->
+            <div class="container-fluid p-4">
+                <!-- Page Header -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Media Manager</h1>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-primary" id="uploadFiles">
+                            <i class="fas fa-upload"></i> Upload Files
+                        </button>
+                        <button class="btn btn-success" id="createFolder">
+                            <i class="fas fa-folder-plus"></i> New Folder
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Storage Stats -->
+                <div class="row mb-4">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Storage Used
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="storageUsed">
+                                            Loading...
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-database fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                            Total Files
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="totalFiles">
+                                            Loading...
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-file fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card border-left-info shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                            Total Folders
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="totalFolders">
+                                            Loading...
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-folder fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                            Storage Limit
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="storageLimit">
+                                            Loading...
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-hdd fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
