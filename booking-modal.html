@@ -1,0 +1,105 @@
+<!-- Add this to all pages that need booking functionality -->
+<div class="modal fade" id="bookingModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Book Your Safari</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="bookingForm" class="booking-form">
+                    <!-- Personal Information -->
+                    <div class="section-title">
+                        <h3>Personal Information</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>First Name *</label>
+                            <input type="text" class="form-control" name="firstName" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>Last Name *</label>
+                            <input type="text" class="form-control" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>Email *</label>
+                            <input type="email" class="form-control" name="email" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>Phone Number *</label>
+                            <input type="tel" class="form-control" name="phone" required>
+                        </div>
+                    </div>
+
+                    <!-- Tour Details -->
+                    <div class="section-title mt-4">
+                        <h3>Tour Details</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>Destination *</label>
+                            <select class="form-select" name="destination" required>
+                                <option value="">Select Destination</option>
+                                <option value="serengeti">Serengeti National Park</option>
+                                <option value="masai-mara">Masai Mara</option>
+                                <option value="bwindi">Bwindi Forest</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>Tour Package *</label>
+                            <select class="form-select" name="package" required>
+                                <option value="">Select Package</option>
+                                <option value="migration">Great Migration Safari</option>
+                                <option value="gorilla">Gorilla Trekking</option>
+                                <option value="kilimanjaro">Kilimanjaro Climb</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Travel Dates -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>Start Date *</label>
+                            <input type="date" class="form-control" name="startDate" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>End Date *</label>
+                            <input type="date" class="form-control" name="endDate" required>
+                        </div>
+                    </div>
+
+                    <!-- Group Details -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>Number of Adults *</label>
+                            <input type="number" class="form-control" name="adults" min="1" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>Number of Children</label>
+                            <input type="number" class="form-control" name="children" min="0">
+                        </div>
+                    </div>
+
+                    <!-- Additional Requirements -->
+                    <div class="mb-3">
+                        <label>Special Requirements</label>
+                        <textarea class="form-control" name="requirements" rows="3" 
+                                placeholder="Dietary restrictions, accessibility needs, etc."></textarea>
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="form-check mb-3">
+                        <input type="checkbox" class="form-check-input" id="terms" required>
+                        <label class="form-check-label" for="terms">
+                            I agree to the <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">terms and conditions</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Book Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
