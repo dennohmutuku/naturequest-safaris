@@ -1,0 +1,73 @@
+/* Admin Layout */
+:root {
+    --sidebar-width: 250px;
+    --sidebar-collapsed-width: 70px;
+    --topnav-height: 60px;
+    --primary-color: #4e73df;
+    --success-color: #1cc88a;
+    --info-color: #36b9cc;
+    --warning-color: #f6c23e;
+    --danger-color: #e74a3b;
+    --dark-color: #5a5c69;
+    --transition-speed: 0.3s;
+}
+
+.admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.admin-sidebar {
+    width: var(--sidebar-width);
+    background: #4e73df;
+    background: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+    color: white;
+    transition: width var(--transition-speed) ease;
+    position: fixed;
+    height: 100vh;
+    z-index: 1000;
+}
+
+.sidebar-collapsed .admin-sidebar {
+    width: var(--sidebar-collapsed-width);
+}
+
+.sidebar-header {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header .logo {
+    height: 40px;
+    transition: all var(--transition-speed) ease;
+}
+
+.sidebar-collapsed .sidebar-header .logo {
+    height: 30px;
+}
+
+.admin-sidebar .components {
+    padding: 1rem 0;
+}
+
+.admin-sidebar .components li {
+    margin-bottom: 0.25rem;
+}
+
+.admin-sidebar .components a {
+    padding: 0.8rem 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all var(--transition-speed) ease;
+}
+
+.admin-sidebar .components a:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.admin-sidebar .components a i
