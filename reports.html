@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - Naturequest Safaris</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.bootstrap5.min.css" rel="stylesheet">
+    <link href="../css/admin.css" rel="stylesheet">
+    <link href="../css/admin-reports.css" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar (same as dashboard.html) -->
+        
+        <div class="admin-content">
+            <!-- Top Navigation (same as dashboard.html) -->
+            
+            <!-- Reports Content -->
+            <div class="container-fluid p-4">
+                <!-- Page Header -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Reports</h1>
+                    <div class="actions">
+                        <button class="btn btn-primary" data-bs-toggle="modal" 
+                                data-bs-target="#scheduleReportModal">
+                            <i class="fas fa-clock"></i> Schedule Report
+                        </button>
+                        <button class="btn btn-success" id="saveTemplate">
+                            <i class="fas fa-save"></i> Save Template
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Report Generator -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Report Generator</h6>
+                    </div>
+                    <div class="card-body">
+                        <form id="reportForm">
+                            <div class="row">
+                                <!-- Report Type -->
+                                <div class="col-md-4 mb-3">
+                                    <label>Report Type</label>
+                                    <select class="form-control" id="reportType" required>
+                                        <!-- Populated by JavaScript -->
+                                    </select>
+                                </div>
+
+                                <!-- Date Range -->
+                                <div class="col-md-4 mb-3">
+                                    <label>Date Range</label>
+                                    <input type="text" class="form-control" id="reportDateRange" required>
+                                </div>
+
+                                <!-- Compare With -->
+                                <div class="col-md-4 mb-3">
+                                    <label>Compare With</label>
+                                    <select class="form-control" name="comparison">
+                                        <option value="">No Comparison</option>
+                                        <option value="previous_period">Previous Period</option>
+                                        <option value="previous_year">Previous Year</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Dynamic Parameters -->
+                            <div id="reportParameters">
+                                <!--
