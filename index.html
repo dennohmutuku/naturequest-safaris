@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naturequest Safaris - Your Gateway to East African Adventures</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Naturequest Safaris" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Destinations
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="destinations/tanzania.html">Tanzania</a></li>
+                            <li><a class="dropdown-item" href="destinations/kenya.html">Kenya</a></li>
+                            <li><a class="dropdown-item" href="destinations/uganda.html">Uganda</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog/index.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-lg-3" href="#" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                            Book Now
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Experience East Africa's Wonders</h1>
+            <p class="lead">Unforgettable safaris, mountain treks, and cultural adventures</p>
+            <div class="hero-buttons">
+                <a href="#featured-tours" class="btn btn-primary btn-lg">Explore Tours</a>
+                <a href="#about" class="btn btn-outline-light btn-lg ms-3">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Tours -->
+    <section id="featured-tours" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Popular Tours</h2>
+            <div class="row">
+                <!-- Serengeti Safari -->
+                <div class="col-md-4 mb-4">
+                    <div class="tour-card">
+                        <div class="tour-card-image">
+                            <img src="images/tours/serengeti.jpg" alt="Serengeti Safari">
+                            <div class="tour-card-price">From $2,500</div>
+                        </div>
+                        <div class="tour-card-content">
+                            <h3>Serengeti Migration Safari</h3>
+                            <div class="tour-card-info">
+                                <span><i class="fas fa-clock"></i> 5 Days</span>
