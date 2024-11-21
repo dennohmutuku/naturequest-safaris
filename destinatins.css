@@ -1,0 +1,91 @@
+/* Destination Header Styles */
+.destination-header {
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.destination-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.destination-header .container {
+    position: relative;
+    z-index: 1;
+}
+
+.destination-header h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+.destination-header .lead {
+    font-size: 1.8rem;
+    animation: fadeIn 1.2s ease-out;
+}
+
+/* Quick Facts Section */
+.quick-facts {
+    background: white;
+    padding: 40px 0;
+}
+
+.fact-box {
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.fact-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.fact-box i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.fact-box h4 {
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+/* Tour Categories */
+.tours-section {
+    padding: 60px 0;
+}
+
+.tours-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--dark-color);
+}
+
+/* Tour Cards Specific to Destinations */
+.destination-tour-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.destination-tour-
