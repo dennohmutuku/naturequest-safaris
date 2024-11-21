@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Documentation - Naturequest Safaris</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet">
+    <link href="../css/admin.css" rel="stylesheet">
+    <link href="../css/admin-help.css" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar (same as dashboard.html) -->
+        
+        <div class="admin-content">
+            <!-- Top Navigation (same as dashboard.html) -->
+            
+            <!-- Help Content -->
+            <div class="container-fluid p-4">
+                <div class="row">
+                    <!-- Help Sidebar -->
+                    <div class="col-md-3">
+                        <div class="help-sidebar">
+                            <!-- Search -->
+                            <div class="search-box mb-4">
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                    <input type="text" class="form-control" id="searchHelp" 
+                                           placeholder="Search help articles...">
+                                </div>
+                            </div>
+
+                            <!-- Articles List -->
+                            <div class="articles-list" id="articlesList">
+                                <!-- Populated by JavaScript -->
+                            </div>
+
+                            <!-- Contact Support -->
+                            <div class="contact-support mt-4">
+                                <h6>Need More Help?</h6>
+                                <button class="btn btn-primary w-100" data-bs-toggle="modal" 
+                                        data-bs-target="#contactSupportModal">
+                                    <i class="fas fa-headset"></i> Contact Support
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article Content -->
+                    <div class="col-md-9">
+                        <div class="article-container">
+                            <div id="articleContent">
+                                <!-- Populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Support Modal -->
+    <div class="modal fade" id="contactSupportModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Contact Support</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="
