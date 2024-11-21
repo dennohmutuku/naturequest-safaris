@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Roles - Naturequest Safaris</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/admin.css" rel="stylesheet">
+    <link href="../css/admin-roles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar (same as dashboard.html) -->
+        
+        <div class="admin-content">
+            <!-- Top Navigation (same as dashboard.html) -->
+            
+            <!-- Roles Content -->
+            <div class="container-fluid p-4">
+                <!-- Page Header -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">User Roles</h1>
+                    <button class="btn btn-primary" id="newRoleBtn">
+                        <i class="fas fa-plus"></i> New Role
+                    </button>
+                </div>
+
+                <!-- Roles Table -->
+                <div class="card shadow mb-4">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="rolesTable">
+                                <thead>
+                                    <tr>
+                                        <th>Role Name</th>
+                                        <th>Description</th>
+                                        <th>Users</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Populated by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Role Modal -->
+    <div class="modal fade" id="roleModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Role Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="roleForm">
+                        <input type="hidden" name="roleId">
+                        
+                        <!-- Basic Information -->
+                        <div class="mb-4">
+                            <div class="mb-3">
+                                <label>Role Name *</label>
+                                <input type="text" class="form-control" name="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label>Description</label>
+                                <textarea class="form-control" name="description" rows="2"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Permissions -->
+                        <div class="mb-4">
+                            <h6 class="form-section-title">Permissions</h6>
+
+                            <!-- Dashboard Permissions -->
+                            <div class="permission-section mb-3">
+                                <div class="permission-header">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input toggle-all" 
+                                               data-category="dashboard">
+                                        <label class="form-check-label">
+                                            <strong>Dashboard</strong>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="permission-items">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input permission-dashboard" 
+                                               name="permissions" value="view_dashboard">
+                                        <label class="form-check-label">View Dashboard</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input permission-dashboard" 
+                                               name="permissions" value="view_analytics">
+                                        <label class="form-check-label">View Analytics</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Booking Permissions -->
+                            <div class="permission-section mb-3">
+                                <div class="permission-header">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input toggle-all" 
+                                               data-category="bookings">
+                                        <label class="form-check-label">
+                                            <strong>Bookings</strong>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="permission-items">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input permission-bookings" 
+                                               name="permissions" value="view_bookings">
+                                        <label class="form-check-label">View Bookings</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input permission-bookings" 
+                                               name="permissions" value="create_bookings">
+                                        <label class="form-check-label">Create Bookings</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input permission-bookings" 
+                                               name="permissions" value="edit_bookings">
+                                        <label class="form-check-label">Edit Bookings</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input permission-bookings" 
+                                               name="permissions" value="delete_bookings">
+                                        <label class="form-check-label">Delete Bookings</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Similar sections for Tours, Customers, Users, Settings -->
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="saveRole">Save Role</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Role Modal -->
+    <div class="modal fade" id="deleteRoleModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirm Deletion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete this role? This action cannot be undone.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteRole">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/admin/roles.js"></script>
+</body>
+</html>
