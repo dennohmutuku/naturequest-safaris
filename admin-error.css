@@ -1,0 +1,164 @@
+/* Error Messages */
+.alert {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1050;
+    max-width: 400px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+/* Error Boundary */
+.error-boundary {
+    padding: 2rem;
+    text-align: center;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 0.5rem;
+    margin: 1rem;
+}
+
+.error-boundary h3 {
+    color: #721c24;
+    margin-bottom: 1rem;
+}
+
+.error-boundary .error-details {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 0.35rem;
+    text-align: left;
+    font-family: monospace;
+    white-space: pre-wrap;
+}
+
+/* Stack Trace */
+.stack-trace {
+    font-family: monospace;
+    font-size: 0.875rem;
+    background-color: #f8f9fc;
+    padding: 1rem;
+    border-radius: 0.35rem;
+    margin-top: 1rem;
+    overflow-x: auto;
+}
+
+.stack-trace-line {
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #e3e6f0;
+}
+
+.stack-trace-line:last-child {
+    border-bottom: none;
+}
+
+/* Error Page */
+.error-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    text-align: center;
+}
+
+.error-page .error-code {
+    font-size: 6rem;
+    font-weight: 700;
+    color: #4e73df;
+    margin-bottom: 1rem;
+}
+
+.error-page .error-message {
+    font-size: 1.5rem;
+    color: #5a5c69;
+    margin-bottom: 2rem;
+}
+
+.error-page .error-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Loading States */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1040;
+}
+
+.loading-spinner {
+    width: 3rem;
+    height: 3rem;
+    border: 3px solid #f8f9fc;
+    border-top-color: #4e73df;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .alert {
+        left: 1rem;
+        right: 1rem;
+        max-width: none;
+    }
+
+    .error-page .error-code {
+        font-size: 4rem;
+    }
+
+    .error-page .error-message {
+        font-size: 1.25rem;
+    }
+
+    .error-page .error-actions {
+        flex-direction: column;
+    }
+}
