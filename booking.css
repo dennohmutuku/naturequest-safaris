@@ -1,0 +1,88 @@
+/* Booking Modal Styles */
+.modal-content {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    background: var(--primary-color);
+    color: white;
+    border-radius: 15px 15px 0 0;
+    padding: 1.5rem;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+/* Booking Form Styles */
+.booking-form .section-title {
+    margin-bottom: 1.5rem;
+}
+
+.booking-form .section-title h3 {
+    font-size: 1.3rem;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.booking-form label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.booking-form .form-control,
+.booking-form .form-select {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.booking-form .form-control:focus,
+.booking-form .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(44, 95, 45, 0.25);
+}
+
+/* Price Display */
+.price-display {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.price-display .total-price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Date Inputs */
+.booking-form input[type="date"] {
+    background: white;
+}
+
+/* Number Inputs */
+.booking-form input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.booking-form input[type="number"]::-webkit-outer-spin-button,
+.booking-form input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/*
