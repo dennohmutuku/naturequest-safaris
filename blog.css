@@ -1,0 +1,241 @@
+/* Blog Layout Styles */
+.blog-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('../images/blog/header-bg.jpg');
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Blog Card Styles */
+.blog-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.blog-card-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.blog-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover .blog-card-image img {
+    transform: scale(1.1);
+}
+
+.blog-card-content {
+    padding: 25px;
+}
+
+.blog-card-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.blog-card-meta span {
+    display: flex;
+    align-items: center;
+}
+
+.blog-card-meta i {
+    margin-right: 5px;
+    color: var(--primary-color);
+}
+
+.blog-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.blog-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Single Post Styles */
+.post-header {
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.post-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.post-content {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.post-meta {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.post-meta span {
+    margin: 0 15px;
+}
+
+.post-body {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.post-body img {
+    max-width: 100%;
+    height: auto;
+    margin: 30px 0;
+    border-radius: 10px;
+}
+
+/* Sidebar Styles */
+.blog-sidebar {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-section {
+    margin-bottom: 30px;
+}
+
+.sidebar-section h3 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.recent-posts li {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.recent-posts li:last-child {
+    border-bottom: none;
+}
+
+.categories li {
+    margin-bottom: 10px;
+}
+
+.categories a {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.categories a:hover {
+    color: var(--primary-color);
+}
+
+/* Search Form */
+.blog-search {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.blog-search input {
+    width: 100%;
+    padding: 10px 45px 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+}
+
+.blog-search button {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--primary-color);
+}
+
+/* Pagination */
+.blog-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.blog-pagination .page-link {
+    color: var(--primary-color);
+    border: none;
+    margin: 0 5px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blog-pagination .page-link:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.blog-pagination .active .page-link {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .blog-card-image {
+        height: 200px;
+    }
+    
+    .post-header {
+        height: 40vh;
+    }
+    
+    .blog-sidebar {
+        margin-top: 40px;
+    }
+}
