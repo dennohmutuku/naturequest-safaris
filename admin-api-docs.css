@@ -1,0 +1,226 @@
+/* Sidebar */
+.docs-sidebar {
+    background-color: #f8f9fc;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    height: calc(100vh - 6rem);
+    overflow-y: auto;
+    position: sticky;
+    top: 1rem;
+}
+
+.search-box input {
+    border-radius: 1.5rem;
+    padding-left: 1rem;
+}
+
+.endpoint-group {
+    margin-bottom: 1.5rem;
+}
+
+.group-title {
+    color: #4e73df;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.endpoint-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.35rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.endpoint-item:hover {
+    background-color: #eaecf4;
+}
+
+.method-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-right: 0.75rem;
+    min-width: 4rem;
+    text-align: center;
+}
+
+.method-badge.get {
+    background-color: #36b9cc;
+    color: white;
+}
+
+.method-badge.post {
+    background-color: #1cc88a;
+    color: white;
+}
+
+.method-badge.put {
+    background-color: #f6c23e;
+    color: white;
+}
+
+.method-badge.delete {
+    background-color: #e74a3b;
+    color: white;
+}
+
+.endpoint-path {
+    font-family: monospace;
+    font-size: 0.875rem;
+    color: #5a5c69;
+}
+
+.endpoint-summary {
+    color: #858796;
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Main Content */
+.docs-content {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.endpoint-header {
+    margin-bottom: 2rem;
+}
+
+.endpoint-description {
+    color: #858796;
+    margin-top: 1rem;
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+.section h5 {
+    color: #4e73df;
+    margin-bottom: 1rem;
+}
+
+/* Parameters Table */
+.table {
+    font-size: 0.875rem;
+}
+
+.table code {
+    background-color: #f8f9fc;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+}
+
+/* Schema Display */
+.schema-wrapper {
+    background-color: #f8f9fc;
+    padding: 1rem;
+    border-radius: 0.35rem;
+}
+
+.schema-object {
+    margin-left: 1rem;
+}
+
+.schema-property {
+    margin-bottom: 0.5rem;
+}
+
+.property-type {
+    color: #858796;
+    font-size: 0.875rem;
+    margin-left: 0.5rem;
+}
+
+.property-description {
+    color: #858796;
+    font-size: 0.875rem;
+    margin: 0.25rem 0 0 1.5rem;
+}
+
+/* Response Section */
+.response-item {
+    margin-bottom: 1.5rem;
+}
+
+.status-code {
+    background-color: #f8f9fc;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    margin-right: 0.5rem;
+}
+
+/* Code Examples */
+.code-wrapper {
+    position: relative;
+    margin: 1rem 0;
+}
+
+.code-wrapper pre {
+    margin: 0;
+    padding: 1rem;
+    background-color: #2d2d2d;
+    border-radius: 0.35rem;
+}
+
+.copy-code {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 0.25rem;
+    color: white;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.copy-code:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Try It Out Section */
+.try-it-section {
+    border-top: 1px solid #e3e6f0;
+    padding-top: 2rem;
+}
+
+.response-section pre {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Authentication Section */
+.auth-section {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.35rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.auth-section h6 {
+    margin-bottom: 0.75rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .docs-sidebar {
+        height: auto;
+        margin-bottom: 1.5rem;
+    }
+
+    .endpoint-summary {
+        display: none;
+    }
+}
